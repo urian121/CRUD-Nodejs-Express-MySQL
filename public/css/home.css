@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  background-color: #fafff9;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.title {
+  color: #3f9435;
+  font-size: 50px;
+  font-weight: 900;
+}
+form {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 17px 26px -8px rgba(151, 172, 193, 0.6);
+}

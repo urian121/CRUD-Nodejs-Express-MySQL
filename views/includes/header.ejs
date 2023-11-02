@@ -1,0 +1,21 @@
+<header class="header">
+  <a href="./" class="logo">
+    <img src="public/imgs/logo.png" alt="Logo" />
+  </a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li>
+      <a class="menu-item <%= rutaActual === '/' ? 'active' : '' %>" href="/"
+        >Inicio</a
+      >
+    </li>
+    <li>
+      <a
+        class="menu-item <%= rutaActual === '/lista-de-estudiantes' ? 'active' : '' %>"
+        href="/lista-de-estudiantes">
+        Crud
+      </a>
+    </li>
+  </ul>
+</header>

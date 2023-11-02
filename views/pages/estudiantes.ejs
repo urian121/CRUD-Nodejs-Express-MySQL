@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('../includes/head') %>
+  </head>
+  <body>
+    <%- include('../includes/header') %>
+
+    <div class="container" style="margin-top: 80px !important">
+      <div class="row justify-content-md-center mb-5">
+        <div class="col-md-12 mt-5">
+          <h2 class="text-center">Lista de Estudiantes</h2>
+          <hr />
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center mb-5">
+        <div class="col-md-4">
+          <form action="/estudiantes" method="POST">
+            <div class="mb-3">
+              <label for="nombre_alumno" class="form-label"> Alumno </label>
+              <input type="text" name="nombre_alumno" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="email_alumno" class="form-label"> Email </label>
+              <input type="email" name="email_alumno" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="curso_alumno">Curso</label>
+              <select name="curso_alumno" class="form-control">
+                <option value=""></option>
+                <option value="Python">Python</option>
+                <option value="NodeJS">NodeJS</option>
+                <option value="PHP">PHP</option>
+                <option value="JavaScript">JavaScript</option>
+              </select>
+            </div>
+
+            <div class="d-grid gap-2 col-12 mx-auto mt-4 mb-4">
+              <button class="btn btn-primary" type="submit">
+                Registrar Alumno
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-8">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Alumno</th>
+                  <th>Email Alumno</th>
+                  <th>Curso del Alumno</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% let contador = 1; %>
+                <!---->
+                <% results.forEach(function(result) { %>
+                <tr>
+                  <th scope="row"><%= contador %></th>
+                  <td><%= result.nombre_alumno %></td>
+                  <td><%= result.email_alumno %></td>
+                  <td><%= result.curso_alumno %></td>
+                  <td>
+                    <span style="display: flex; justify-content: space-between">
+                      <a
+                        class="btn btn-info info_especial"
+                        href="{% url 'detalles_empleado' empleado.id %}"
+                        title="Ver Detalles del Empleado">
+                        <i class="bi bi-person-bounding-box"></i>
+                      </a>
+                      <a
+                        class="btn btn-success success_especial"
+                        title="Editar datos del Empleado"
+                        href="{% url 'view_form_update_empleado' empleado.id %}">
+                        <i class="bi bi-pencil-square"></i>
+                      </a>
+                      <button
+                        class="btn btn-warning warning_especial"
+                        title="Eliminar Empleado"
+                        onclick="borrarEmpleado('{{ empleado.id }}')">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <% contador++; %>
+                <!---->
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../includes/scripts') %>
+  </body>
+</html>
