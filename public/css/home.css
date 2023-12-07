@@ -15,3 +15,8 @@ form {
   border-radius: 10px;
   box-shadow: 0px 17px 26px -8px rgba(151, 172, 193, 0.6);
 }
+.custom_table {
+  background-color: #fff;
+  box-shadow: 0px 2px 97px 7px rgba(151, 172, 193, 0.6);
+  border-radius: 5px;
+}
