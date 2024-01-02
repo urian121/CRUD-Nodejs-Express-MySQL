@@ -51,4 +51,4 @@
     Con el fin de las palabras claves 'import' y 'export' para importar y exportar modulos respectivamente.
     Cuando usamos (ESM) algunas caracteriscticas de nodejs como require() y module.exports no estan disponibles, en su lugar estan import y export.
 
-![](https://github.com/urian121/CRUD-Nodejs-Express-MySQL/crud-completo-nodejs-express-mysql-urian-viera.png)
+![](https://github.com/urian121/CRUD-Nodejs-Express-MySQL/blob/master/crud-completo-nodejs-express-mysql-urian-viera.png)
