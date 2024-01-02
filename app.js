@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import router from "./router.js"; // Importa el enrutador
+import router from "./src/router.js"; // Importa el enrutador
 
 const app = express();
 app.use(cors());
@@ -12,9 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 
 app.get("/", (req, res) => {
-  res.render("inicio", {
-    rutaActual: "/",
-  });
+  res.render("inicio", {});
 });
 
 // Usa el enrutador para las rutas relacionadas con estudiantes

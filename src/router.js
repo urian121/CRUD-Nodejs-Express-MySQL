@@ -1,4 +1,3 @@
-// router.js
 import express from "express";
 
 import {
@@ -12,28 +11,10 @@ import {
 
 const router = express.Router();
 
-let url_crud = "/Crud-Completo-con-NodeJS-ExpressJS-y-MySQL";
-router.get(url_crud, async (req, res) => {
+router.get("/Crud-Completo-con-NodeJS-Express-y-MySQL", async (req, res) => {
   try {
     const estudiantes = await listarEstudiantes();
-    res.render("pages/estudiantes", {
-      rutaActual: "/",
-      estudiantes,
-    });
-  } catch (error) {
-    const { status, message } = error;
-    res.status(status || 500).json({ error: message });
-  }
-});
-
-// Listar de Estudiantes
-router.get("/", async (req, res) => {
-  try {
-    const estudiantes = await listarEstudiantes();
-    res.render("pages/estudiantes", {
-      rutaActual: "/",
-      estudiantes,
-    });
+    res.render("pages/estudiantes", { estudiantes });
   } catch (error) {
     const { status, message } = error;
     res.status(status || 500).json({ error: message });
@@ -59,10 +40,7 @@ router.get("/detalles/:id", async (req, res) => {
 
   try {
     const estudiante = await obtenerDetallesEstudiante(estudianteId);
-    res.render("pages/detalles_estudiante", {
-      rutaActual: "/",
-      estudiante,
-    });
+    res.render("pages/detalles_estudiante", { estudiante });
   } catch (error) {
     const { status, message } = error;
     res.status(status || 500).json({ error: message });
@@ -76,10 +54,7 @@ router.get("/formulario-actualizar-estudiante/:id", async (req, res) => {
   try {
     const estudiante = await obtenerDetallesEstudianteUpdate(estudianteId);
 
-    res.render("pages/update_estudiante", {
-      rutaActual: "/",
-      estudiante,
-    });
+    res.render("pages/update_estudiante", { estudiante });
   } catch (error) {
     const { status, message } = error;
     res.status(status || 500).json({ error: message });
@@ -97,11 +72,8 @@ router.post("/actualizar-estudiante/:id", async (req, res) => {
       email_alumno,
       curso_alumno,
     });
-    const estudiantes = await listarEstudiantes();
-    res.render("pages/estudiantes", {
-      rutaActual: "/",
-      estudiantes,
-    });
+
+    res.redirect("/Crud-Completo-con-NodeJS-Express-y-MySQL");
   } catch (error) {
     const { status, message } = error;
     res.status(status || 500).json({ error: message });
@@ -113,11 +85,7 @@ router.post("/borrar-estudiante/:id", async (req, res) => {
   const id = req.params.id;
   try {
     await eliminarEstudiante(id);
-    const estudiantes = await listarEstudiantes();
-    res.render("pages/estudiantes", {
-      rutaActual: "/",
-      estudiantes,
-    });
+    res.redirect("/Crud-Completo-con-NodeJS-Express-y-MySQL");
   } catch (error) {
     const { status, message } = error;
     res.status(status || 500).json({ error: message });
