@@ -8,9 +8,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/public", express.static("public"));
 
+//Establece el motor de plantillas
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
+// Carga la página de inicio
 app.get("/", (req, res) => {
   res.render("inicio", {});
 });

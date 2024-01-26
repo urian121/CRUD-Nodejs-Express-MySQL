@@ -1,6 +1,6 @@
 # CRUD Nodejs con Express y MySQL2
 
-    crud completo node js mysql
+    Crud completo con Node js y MySQL
     Este proyecto es una aplicación CRUD (Crear, Leer, Actualizar y Borrar) en Node.js utilizando el framework Express y la biblioteca `mysql2` para interactuar con una base de datos MySQL.
 
 ## Pasos para crear la aplicación
@@ -46,6 +46,8 @@
     node app.js    -----> Opcion 2
 
 #### Notas
+
+    https://www.npmjs.com/package/mysql2
 
     La propiedad "type": "module", en el archivo packege.json indica que estamos usando el sistema de modulos ECMAScript(ESM).
     Con el fin de las palabras claves 'import' y 'export' para importar y exportar modulos respectivamente.

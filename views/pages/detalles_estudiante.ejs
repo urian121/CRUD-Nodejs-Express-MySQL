@@ -42,21 +42,30 @@
       </ul>
     </header>
 
-    <div class="container" style="margin-top: 80px !important">
-      <h1>Detalles del Estudiante</h1>
+    <div
+      class="container justify-content-center"
+      style="margin-top: 80px !important">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8 text-center grid-margin">
+          <h1>
+            <a href="/Crud-Completo-con-NodeJS-Express-y-MySQL">
+              <i class="bi bi-arrow-left-circle"></i>
+            </a>
+            Detalles del Estudiante
+          </h1>
 
-      <div class="mb-3">
-        <label for="nombre_alumno" class="form-label">Alumno</label>: <%=
-        estudiante.nombre_alumno %>
-      </div>
-
-      <div class="mb-3">
-        <label for="email_alumno" class="form-label">Email</label>: <%=
-        estudiante.email_alumno %>
-      </div>
-
-      <div class="mb-3">
-        <label for="curso_alumno">Curso</label>: <%= estudiante.curso_alumno %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Alumno: <%= estudiante.nombre_alumno %>
+            </li>
+            <li class="list-group-item">
+              Email: <%= estudiante.email_alumno %>
+            </li>
+            <li class="list-group-item">
+              Curso: <%= estudiante.curso_alumno %>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
